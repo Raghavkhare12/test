@@ -8,7 +8,7 @@ const Login = () => {
 
   const onSubmit = async e => {
     e.preventDefault();
-    // Your login logic here
+    // Your login logic here.
     console.log('Login attempt', formData);
   };
 
