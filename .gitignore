@@ -1,45 +1,21 @@
- # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# See https://help.github.com/articles/ignoring-files/
 
-
-
-# dependencies
-
+# Dependencies
+# Ignores all node_modules folders in the project
 /node_modules
 
-/.pnp
+# Secrets
+# Ignores all .env files, including specific ones like .env.local
+.env
+.env.*
+!.env.example
 
-.pnp.js
-
-
-
-# testing
-
-/coverage
-
-
-
-# production
-
+# Production builds
+# Ignores the build folder, typically from the React frontend
 /build
 
-
-
-# misc
-
+# Miscellaneous
 .DS_Store
-
-.env.local
-
-.env.development.local
-
-.env.test.local
-
-.env.production.local
-
-
-
 npm-debug.log*
-
 yarn-debug.log*
-
 yarn-error.log*
