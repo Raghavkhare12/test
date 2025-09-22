@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+  padding: 20px;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 550px;
+  min-height: 400px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 30px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #2b3d41;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+}
+
+.header .icon {
+  font-size: 2rem;
+}
+
+.input-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.task-input {
+  flex-grow: 1;
+  padding: 15px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  font-size: 1rem;
+  color: #333;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
+.task-input:focus {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.add-btn {
+  padding: 15px 20px;
+  border: none;
+  background: linear-gradient(to right, #2193b0, #6dd5ed);
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.add-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.task-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.task-item:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+  transform: scale(1.02);
+}
+
+.task-item span {
+  flex-grow: 1;
+  color: #1c2b2e;
+  font-size: 1.1rem;
+}
+
+.delete-btn {
+  padding: 8px 12px;
+  border: none;
+  background-color: #ff6b6b;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease, background-color 0.2s ease;
+}
+
+.task-item:hover .delete-btn {
+  opacity: 1; /* Show on hover */
+}
+
+.delete-btn:hover {
+  background-color: #ff4757;
+}
+/* --- NEW & IMPROVED Background Animations --- */
+.background-animations {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.background-animations li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  /* More vibrant colors for clear visibility */
+  background: rgba(255, 255, 255, 0.4); /* Base white */
+  animation: animate 25s linear infinite;
+  bottom: -150px;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.7); /* Add a glow */
+}
+
+/* Customizing colors and sizes for individual bubbles */
+.background-animations li:nth-child(1) {
+  left: 25%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 0s;
+  background: rgba(255, 107, 107, 0.6); /* Reddish */
+}
+
+.background-animations li:nth-child(2) {
+  left: 10%;
+  width: 30px; /* Slightly larger */
+  height: 30px;
+  animation-delay: 2s;
+  animation-duration: 12s;
+  background: rgba(255, 204, 0, 0.6); /* Yellowish */
+}
+
+.background-animations li:nth-child(3) {
+  left: 70%;
+  width: 40px;
+  height: 40px;
+  animation-delay: 4s;
+  animation-duration: 18s; /* Varied duration */
+  background: rgba(107, 198, 255, 0.6); /* Bluish */
+}
+
+.background-animations li:nth-child(4) {
+  left: 40%;
+  width: 90px;
+  height: 90px;
+  animation-delay: 0s;
+  animation-duration: 20s;
+  background: rgba(142, 68, 173, 0.6); /* Purplish */
+}
+
+.background-animations li:nth-child(5) {
+  left: 65%;
+  width: 25px;
+  height: 25px;
+  animation-delay: 0s;
+  animation-duration: 10s; /* Faster */
+  background: rgba(230, 126, 34, 0.6); /* Orangish */
+}
+
+.background-animations li:nth-child(6) {
+  left: 75%;
+  width: 120px;
+  height: 120px;
+  animation-delay: 3s;
+  animation-duration: 25s;
+  background: rgba(46, 204, 113, 0.6); /* Greenish */
+}
+
+.background-animations li:nth-child(7) {
+  left: 35%;
+  width: 160px;
+  height: 160px;
+  animation-delay: 7s;
+  animation-duration: 30s;
+  background: rgba(241, 196, 15, 0.6); /* Gold */
+}
+
+.background-animations li:nth-child(8) {
+  left: 50%;
+  width: 50px; /* Larger */
+  height: 50px;
+  animation-delay: 15s;
+  animation-duration: 45s;
+  background: rgba(155, 89, 182, 0.6); /* Dark Purplish */
+}
+
+.background-animations li:nth-child(9) {
+  left: 20%;
+  width: 25px;
+  height: 25px;
+  animation-delay: 2s;
+  animation-duration: 35s;
+  background: rgba(26, 188, 156, 0.6); /* Teal */
+}
+
+.background-animations li:nth-child(10) {
+  left: 85%;
+  width: 100px;
+  height: 100px;
+  animation-delay: 11s;
+  animation-duration: 22s;
+  background: rgba(52, 152, 219, 0.6); /* Sky Blue */
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-1000px) rotate(720deg) scale(1.5); /* Float higher, rotate more, grow */
+    opacity: 0;
+  }
+}
+.auth-form {
+  width: 100%;
+  max-width: 400px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  text-align: center;
+}
+
+.auth-form h2 {
+  margin-bottom: 1.5rem;
+  color: #2b3d41;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255, 255, 255, 0.5);
+  font-size: 1rem;
+}
+
+.auth-form button {
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(to right, #2193b0, #6dd5ed);
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.auth-form p {
+    margin-top: 1rem;
+    color: #333;
+}
+
+.logout-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    border: none;
+    background: rgba(255, 107, 107, 0.8);
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 500;
+}
