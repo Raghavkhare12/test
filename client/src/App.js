@@ -3,7 +3,7 @@ import { Routes, Route, useNavigate, Link } from 'react-router-dom';
 import './App.css'; // Your awesome UI styles
 
 // API base URL
-const API_BASE = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+const API_BASE = 'https://todo-api-feqk.onrender.com';
 
 // A simple Login component (you can move this to its own file)
 const Login = ({ setToken }) => {
